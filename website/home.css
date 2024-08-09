@@ -1,0 +1,119 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to right, rgb(225, 170, 68), rgb(236, 212, 168));
+}
+#center1{
+    margin-left: -60%;
+}
+#txtcolor{
+    color: blue;
+}
+.active{
+    transform: scale(1.1);
+}
+#hover:hover{
+    transform: scale(1.1);
+}
+#center2{
+    margin-left: 30%; 
+    
+}
+#img1{
+    margin-top: 0%;
+    margin-left: 0%;
+}
+
+#p{
+    margin-left: 5%;
+    font-size: 100px;
+   font-weight: bolder;
+}
+#p1{
+    margin-top: -4%;
+    margin-left: 5%;
+    transition-delay: 10000ms;
+    font-size: 100px;
+   font-weight: bolder;
+}
+
+.service{
+
+    font-weight: bolder;
+    color: rgb(151, 111, 38);
+    text-align: center;
+}
+#p2{
+    color: rgb(77, 77, 77);
+    margin-top: 0%;
+    margin-left: 5%;
+   font-weight: bolder;
+}
+#h3{
+    text-align:center;
+}
+#tilt{
+    transform: rotate(25deg);
+}
+.row{
+    width: 100%;
+}
+#button{
+    transition: 800ms;
+    margin-left: 5%;
+    color: rgb(224, 224, 224);
+    background-color: rgb(36, 36, 36);
+    width: 200px;
+    height: 50px;
+    font-weight: bold;
+    border: solid rgb(36, 36, 36);
+    border-radius:10px ;
+ 
+}
+#button:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+    transform: scale(1.1);
+    transition: 200ms;
+}
+#button1{
+    transition: 800ms;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(224, 224, 224);
+    background-color: rgb(36, 36, 36);
+    width: 200px;
+    height: 50px;
+    font-weight: bold;
+}
+#button1:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+    0 10px 10px rgba(0,0,0,0.22);
+    transform: scale(1.1);
+    transition: 200ms;
+}
+#border{
+    border: 1px black ;
+    
+   
+  
+
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+    0 10px 10px rgba(0,0,0,0.22);
+
+}
+#a_button{
+    transition: 800ms;
+  
+    color:  rgb(36, 36, 36);
+   border: 1px black solid;
+    width: 200px;
+    font-weight: bold;
+}
+#a_button:hover{
+    transition: 200ms;
+    transform: scale(1.1);
+}
+.express{
+    padding-top: 60px;
+}
