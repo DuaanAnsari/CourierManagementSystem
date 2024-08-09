@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="length.css">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+   <!-- Customized Bootstrap Stylesheet -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="css/style.css" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+           
+            
+        background: linear-gradient(to right, rgb(225, 170, 68), rgb(236, 212, 168));
+   
+        }
+        .container {
+            width:700px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #343a40;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .mar{
+      margin-top:200px;
+        margin-left: 400px;
+      }
+    </style>
+</head>
+<body>
+       <!-- Sidebar Start -->
+       <div class="sidebar pe-4 pb-3">
+            <nav class="navbar ">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                <img src="delivery-service-logo-for-courier-company-vector-removebg-preview.png">
+                </a>
+         
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                    <a href="#"><img src="dp.png" width="50px"></a>
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">Duaan</h6>
+                        <span>Agent</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="agentpanel.php" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="newcourier.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>A New Parcel</a>
+                    <a href="updatecourier1.php" class="nav-item nav-link"><i class="bi bi-arrow-up-circle-fill me-2"></i>Update Parcel</a>
+                    <a href="contact.php" class="nav-item nav-link active"><i class="bi bi-question-octagon me-2"></i>Contact Admin</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Status</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="pending.php" class="dropdown-item">Pending Deliveries</a>
+                            <a href="enroute.php" class="dropdown-item">Enroute</a>
+                            <a href="deliver.php" class="dropdown-item">Delivered</a>
+                           
+                        </div>
+                    </div>
+                
+                </div>
+            </nav>
+        </div>
+        </div>
+        <!-- Sidebar End -->
+        <?php
+$con = mysqli_connect('localhost' , 'root' , '' , 'track');
+if(isset($_POST['button'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $msg = $_POST['message'];
+    $sql = "INSERT INTO a_contact(name , email , msg)
+    VALUES ('$name' , '$email' , '$msg')";
+    $result = mysqli_query($con , $sql);
+    if($result){
+        echo"<script>alert('Message Forwarded To Admin')</script>";
+    
+    }
+    else{
+        echo"<script>alert(' :/ Error Found please try again later')</script>";
+       
+    }
+    
+}
+?>
+<div id="length">
+    <div class="container mt-5 mar">
+        <h1>Contact Us</h1>
+
+       
+            
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message"  required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="button">Submit</button>
+                </form>
+            </div>
+           
+    
+    </div>
+
+    </div>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
